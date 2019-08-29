@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Simple Image Classifier</title>
+    <script src="Scripts/index.js"></script>
+    <script src="Scripts/model.js"></script>
+</head>
+<body>
+    <div class='container'>
+        <nav class="navbar navbar-light" style="background-color: #2b2b2b;">
+            <a class="navbar-brand" href="#"><h3 style="color: aliceblue">Image Classifier</h3></a>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="https://images.google.com" target="blank">Goto Google Images</a>
+                </li>
+        </nav>
+        <div class="jumbotron jumbotron-fluid" style="background: rgb(247, 236, 236);">
+            <div class="text-center">
+                <h2 class="display-4">A simple image classifier using JavaScript</h2>
+                <p class="lead">First upload your image and press predict class botton to see your predicted class</p>
+            </div>
+            <hr class="my-4">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" accept="image/*" name="image" id="file"  onchange="loadFile(event) ">
+                <div class="text-center">
+                    <label for="file" class="btn btn-primary btn-lg" style="cursor: pointer; background-color: #731ce4;">Please Upload Your Image Here</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class='container'>
+        <div class="text-center">
+            <img id="output" src="Default.jpg" class="img-fluid img-thumbnail" width="400" />
+        </div>
+    </div>
+    <div class='container'>
+        <hr class="my-2">
+        <div class="text-center"><button type="button" class="btn btn-danger btn-lg" onclick="setup()">Predict Class</button></div>
+    </div>
+
+    <div class="container">
+        <hr>
+        <div class="text-center">
+            <div class="alert alert-success" role="alert">
+                <h5 id="predicted">Predicted Class</h5>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
